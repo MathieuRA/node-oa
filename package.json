@@ -1,0 +1,19 @@
+{
+  "name": "nodeoa",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.mts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathieuRA/node-oa.git"
+  },
+  "author": "RAISIN Mathieu",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/MathieuRA/node-oa/issues"
+  },
+  "homepage": "https://github.com/MathieuRA/node-oa#readme"
+}
