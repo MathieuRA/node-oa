@@ -2,8 +2,12 @@
   "name": "nodeoa",
   "version": "0.0.0",
   "description": "",
-  "main": "index.mts",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
+    "start": "node --env-file=.env ./index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/MathieuRA/node-oa/issues"
   },
-  "homepage": "https://github.com/MathieuRA/node-oa#readme"
+  "homepage": "https://github.com/MathieuRA/node-oa#readme",
+  "devDependencies": {
+    "@types/node": "^26.6.6"
+  }
 }
