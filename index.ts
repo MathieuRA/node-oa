@@ -6,7 +6,7 @@ const OPENAPI_PATH = "/openapi.json"
 const BASE_PATH = "/api"
 
 const app = new Server({
-    port: 3001,
+    port: 3002,
     basePath: BASE_PATH,
     openApi: {
         path: OPENAPI_PATH,
@@ -25,8 +25,8 @@ app
     .get('/foo/:id', ({ id }) => {
         return new ApiResponse({ status: 200, data: { 'foo': 'bar', id } })
     })
-    .post('/foo', ({ body }) => {
-        return new ApiResponse({ status: 200, data: { 'foo': 'bar', body } })
+    .post('/foo', async ({ request, body }) => {
+        return new ApiResponse({ status: 200, data: { 'foo': 'bar', ...(await body(request)) } })
     })
     .get('/swagger', ({ response }) => {
         response.writeHead(200, { 'content-type': 'text/html; charset=utf-8' })

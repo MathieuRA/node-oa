@@ -174,6 +174,13 @@ export class Router {
             }
         }
 
+        if (route === undefined) {
+            res
+                .writeHead(404, { 'content-type': 'application/json' })
+                .end(JSON.stringify({ error: 'Route not found' }))
+            return
+        }
+
         // @ts-ignore
         const result = await route.callback({ request: req, response: res, ...queries, body: this.#body })
         if (res.headersSent) {
